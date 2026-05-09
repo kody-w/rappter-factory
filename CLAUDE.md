@@ -1,20 +1,29 @@
-# CLAUDE.md — AI Assistant Guide for rappter-factory
+# CLAUDE.md — rappter-factory
 
-## Project Overview
+## What This Is
 
-**rappter-factory** is a new project. This document will be updated as the codebase evolves.
+**rappter-factory** is the foundation repo — the base scaffold from which all Rappter projects are generated. It contains the core tooling, configurations, and conventions that every project inherits. Changes here propagate downstream, so treat this repo with care.
 
 ## Repository Structure
 
 ```
 rappter-factory/
-├── CLAUDE.md          # This file — AI assistant guide
-└── (project files TBD)
+├── CLAUDE.md              # This file — AI assistant guide and project documentation
+└── (scaffolding TBD)      # Templates, configs, and tooling to be added
 ```
 
-## Development Setup
+> Update this tree as the repo grows. Keep it current.
 
-> **Note:** This section should be updated once the project's tech stack and dependencies are established.
+## Purpose & Philosophy
+
+This repo exists to solve one problem: **every new project should start with a working foundation** — linting, formatting, testing, CI/CD, Docker, and sensible defaults — so teams never waste time on boilerplate setup.
+
+Principles:
+- **Opinionated defaults, easy overrides** — ship strong conventions but don't lock projects in
+- **Nothing unused** — every file in this repo should serve a purpose in generated projects
+- **Keep it minimal** — add what's needed, nothing speculative
+
+## Development Setup
 
 ### Prerequisites
 
@@ -25,7 +34,6 @@ rappter-factory/
 ```bash
 git clone <repository-url>
 cd rappter-factory
-# Install dependencies (TBD)
 ```
 
 ## Development Workflow
@@ -38,43 +46,48 @@ cd rappter-factory
 
 ### Commit Messages
 
-Use clear, descriptive commit messages. Prefer conventional commit format:
+Conventional commit format:
 
 ```
 type(scope): short description
-
-Longer explanation if needed.
 ```
 
 Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 
-## Code Conventions
+### Making Changes
 
-> **Note:** Update this section with project-specific linting, formatting, and style conventions once established.
+1. Create a branch from `main`
+2. Make focused, minimal changes
+3. Test that generated/scaffolded projects still work
+4. Open a PR with a clear description
+
+## Code Conventions
 
 - Write clear, self-documenting code
 - Keep functions focused and small
 - Add tests for new functionality
+- No dead code, no commented-out blocks
+- Config files should include brief inline comments explaining non-obvious settings
 
 ## Testing
 
-> **Note:** Update with test framework and commands once established.
-
 ```bash
-# Run tests (TBD)
+# Run tests (update once test framework is chosen)
 ```
 
 ## CI/CD
 
-> **Note:** Update with CI/CD pipeline details once configured.
+> Update with pipeline details once configured.
 
 ## AI Assistant Guidelines
 
 When working in this repository:
 
-1. **Read before writing** — Always read existing files before modifying them
-2. **Minimal changes** — Only change what's necessary to accomplish the task
-3. **Don't over-engineer** — Keep solutions simple and focused
-4. **Preserve existing patterns** — Follow conventions already established in the codebase
-5. **Test your changes** — Run the test suite after making changes
-6. **No secrets** — Never commit `.env` files, API keys, or credentials
+1. **Read before writing** — always read existing files before modifying them
+2. **Minimal changes** — only change what's necessary to accomplish the task
+3. **Don't over-engineer** — keep solutions simple and focused
+4. **Preserve existing patterns** — follow conventions already established in the codebase
+5. **Test your changes** — run the test suite after making changes
+6. **No secrets** — never commit `.env` files, API keys, or credentials
+7. **This is a foundation repo** — changes here affect every project generated from it, so be deliberate
+8. **Update this file** — when you add tooling, configs, or conventions, update this CLAUDE.md to reflect them
